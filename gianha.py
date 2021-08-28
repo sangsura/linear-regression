@@ -31,6 +31,7 @@ print('Giá nhà cho 50m^2 là : ', y1)
 np.save('weight.npy', w)
 # Đọc file '.npy' chứa tham số weight
 w = np.load('weight.npy')
+#m đừng có sửa linh tinh
 print(w)
 plt.plot(cost)
 plt.show()
