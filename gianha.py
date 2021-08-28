@@ -11,10 +11,10 @@ plt.xlabel('mét vuông')
 plt.ylabel('giá') 
 x = np.hstack((np.ones((N, 1)), x))
 w = np.array([0.,1.]).reshape(-1,1)
-numOfIteration = 100
+numOfIteration = 30
 cost = np.zeros((numOfIteration,1))
 learning_rate = 0.000001
-for i in range(1, numOfIteration):
+for i in range(0, numOfIteration):
     r = np.dot(x, w) - y
     cost[i] = 0.5*np.sum(r*r)
     w[0] -= learning_rate*np.sum(r)
@@ -32,3 +32,5 @@ np.save('weight.npy', w)
 # Đọc file '.npy' chứa tham số weight
 w = np.load('weight.npy')
 print(w)
+plt.plot(cost)
+plt.show()
